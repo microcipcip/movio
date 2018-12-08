@@ -1,3 +1,3 @@
-import App from './App'
+import Index from './App'
 
-export default App
+export default Index
