@@ -25,22 +25,30 @@ class App extends Component {
 
   async componentDidMount() {
     try {
+      this.setState(() => ({ isFetching: true }))
       const movieList = await this.getMovies()
       const genreList = await this.getGenres(movieList)
       this.setState(() => ({
         movieList,
         genreList,
+        isFetching: false,
       }))
     } catch (err) {
       console.error(err)
       this.setState(() => ({
-        fetchError:
-          'Something went wrong while fetching movieList and genreList',
+        errorMsg: 'Something went wrong while fetching movieList and genreList',
+        isFetching: false,
       }))
     }
   }
 
   render() {
+    const { isFetching, errorMsg } = this.state
+
+    if (isFetching) return <div>Loading...</div>
+
+    if (errorMsg) return <div>{errorMsg}</div>
+
     return (
       <ThemeProvider theme={theme.dark}>
         <CinemaContext.Provider value={this.state}>

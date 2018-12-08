@@ -3,7 +3,7 @@ export const cinemaContextState = {
   movieList: [],
   genreList: [],
   isFetching: false,
-  fetchError: '',
+  errorMsg: '',
 }
 
 const Context = createContext(cinemaContextState)
