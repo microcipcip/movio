@@ -1,5 +1,6 @@
 import { css } from 'styled-components'
 import * as s from './vars'
+import bp from './mixins/bp'
 
 export default css`
   html {

@@ -15,7 +15,7 @@ export const h6FontSize = `${fontSizeValue}rem`
 
 // spacing
 export const baseSpacing = `${baseLineHeight}em`
-export const smallSpacing = baseSpacing / 2
+export const smallSpacing = baseLineHeight / 2
 
 // theme
 export const cBlack = '#000000'
@@ -27,13 +27,13 @@ export const theme = {
     bg: cBlack,
     textColor: cWhite,
     actionColor: cBlue,
-    actionColorHover: cBlue,
+    actionColorHover: cBlueDark,
   },
   light: {
     bg: cWhite,
     textColor: cBlack,
     actionColor: cBlue,
-    actionColorHover: cBlue,
+    actionColorHover: cBlueDark,
   },
 }
 
@@ -42,3 +42,20 @@ export const deviceWidthMax = '1200px'
 export const deviceWidthMin = '320px'
 
 // media queries
+export const bp = {
+  xxxs: 0,
+  xxs: 200,
+  xs: 320,
+  s: 400,
+  sl: 480,
+  sl2: 580,
+  m: 768,
+  ml: 992,
+  l: 1100,
+  xl: 1200,
+  xxl: 1300,
+  xxxl: 1400,
+  xxxxl: 1500,
+  xxxxxl: 1600,
+  xxxxxxl: 1700,
+}
