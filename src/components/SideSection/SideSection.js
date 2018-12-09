@@ -2,12 +2,11 @@ import React from 'react'
 import PropTypes from 'prop-types' // eslint-disable-line no-unused-vars
 import styled from 'styled-components'
 import bp from 'styles/mixins/bp'
-import GenreFilter from 'components/GenreFilter'
+import GenreFilterList from 'components/GenreFilterList'
 
 const SideSection = props => (
   <SideSectionStyled>
-    SideSection
-    <GenreFilter />
+    <GenreFilterList />
   </SideSectionStyled>
 )
 

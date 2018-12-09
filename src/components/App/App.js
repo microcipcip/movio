@@ -10,8 +10,6 @@ import MainSection from 'components/MainSection'
 import SideSection from 'components/SideSection'
 
 class App extends Component {
-  state = { ...cinemaContextState }
-
   getMovies = async () => {
     const { results } = await fetchApi('movie/now_playing')
     return results
@@ -22,6 +20,18 @@ class App extends Component {
     return genres.filter(({ id }) =>
       movieList.some(movie => movie.genre_ids.includes(id))
     )
+  }
+
+  addGenreFilter = genreId => {}
+
+  removeGenreFilter = genreId => {}
+
+  setVoteFilter = voteValue => {}
+
+  state = {
+    ...cinemaContextState,
+    addGenreFilter: this.addGenreFilter,
+    removeGenreFilter: this.removeGenreFilter,
   }
 
   async componentDidMount() {
