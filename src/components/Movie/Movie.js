@@ -1,5 +1,4 @@
 import React, { createContext } from 'react'
-import PropTypes from 'prop-types' // eslint-disable-line no-unused-vars
 import styled from 'styled-components'
 import checkCompoundConsumer from 'helpers/checkCompoundConsumer'
 import MovieCover from './MovieCover'
@@ -29,8 +28,5 @@ export const MovieConsumer = checkCompoundConsumer(
   MovieContext,
   'Compound components of Movie should render beneath it'
 )
-
-Movie.propTypes = {}
-Movie.defaultProps = {}
 
 export default Movie

@@ -1,5 +1,4 @@
 import React from 'react'
-import PropTypes from 'prop-types' // eslint-disable-line no-unused-vars
 import styled from 'styled-components'
 
 const GenreFilter = ({ id, name }) => (
@@ -25,8 +24,5 @@ const GenreLabelStyled = styled.label`
     background: red;
   }
 `
-
-GenreFilter.propTypes = {}
-GenreFilter.defaultProps = {}
 
 export default GenreFilter

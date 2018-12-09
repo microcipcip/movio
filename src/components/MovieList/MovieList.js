@@ -1,5 +1,4 @@
 import React from 'react'
-import PropTypes from 'prop-types' // eslint-disable-line no-unused-vars
 import styled from 'styled-components'
 import * as s from 'styles/vars'
 import bp from 'styles/mixins/bp'
@@ -36,8 +35,5 @@ const MovieListStyled = styled.div`
 const MovieContent = styled.div`
   padding: 10px 0 0;
 `
-
-MovieList.propTypes = {}
-MovieList.defaultProps = {}
 
 export default MovieList

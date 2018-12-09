@@ -1,5 +1,4 @@
 import React from 'react'
-import PropTypes from 'prop-types' // eslint-disable-line no-unused-vars
 import styled from 'styled-components'
 import { MovieConsumer } from './Movie'
 
@@ -14,8 +13,5 @@ const MovieTitleStyled = styled.h2`
   font-weight: bold;
   font-size: 1.8rem;
 `
-
-MovieTitle.propTypes = {}
-MovieTitle.defaultProps = {}
 
 export default MovieTitle

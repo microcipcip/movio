@@ -1,5 +1,4 @@
 import React from 'react'
-import PropTypes from 'prop-types' // eslint-disable-line no-unused-vars
 import styled from 'styled-components'
 import * as s from 'styles/vars'
 import bp from 'styles/mixins/bp'
@@ -22,8 +21,5 @@ const MainSectionStyled = styled.div`
     flex-basis: 100%;  
   `}
 `
-
-MainSection.propTypes = {}
-MainSection.defaultProps = {}
 
 export default MainSection

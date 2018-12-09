@@ -1,5 +1,4 @@
 import React from 'react'
-import PropTypes from 'prop-types' // eslint-disable-line no-unused-vars
 import styled from 'styled-components'
 import bp from 'styles/mixins/bp'
 import GenreFilterList from 'components/GenreFilterList'
@@ -21,8 +20,5 @@ const SideSectionStyled = styled.div`
     flex: 0 0 230px; 
   `}
 `
-
-SideSection.propTypes = {}
-SideSection.defaultProps = {}
 
 export default SideSection

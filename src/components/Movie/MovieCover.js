@@ -1,5 +1,4 @@
 import React from 'react'
-import PropTypes from 'prop-types' // eslint-disable-line no-unused-vars
 import styled from 'styled-components'
 import { TMDB_API_IMG_URL } from 'config'
 import { MovieConsumer } from './Movie'
@@ -33,8 +32,5 @@ const ImageStyled = styled.img`
   object-fit: cover;
   border-radius: 2px;
 `
-
-MovieCover.propTypes = {}
-MovieCover.defaultProps = {}
 
 export default MovieCover

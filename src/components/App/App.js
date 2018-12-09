@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import PropTypes from 'prop-types' // eslint-disable-line no-unused-vars
 import styled, { ThemeProvider } from 'styled-components'
 import Styles from 'styles'
 import { theme } from 'styles/vars'
@@ -80,8 +79,5 @@ const AppStyled = styled.div`
   flex-wrap: wrap;
   min-height: 100vh;
 `
-
-App.propTypes = {}
-App.defaultProps = {}
 
 export default App
