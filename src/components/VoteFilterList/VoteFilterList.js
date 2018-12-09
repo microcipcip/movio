@@ -10,9 +10,14 @@ class VoteFilterList extends React.Component {
     isDropdownActive: false,
   }
 
-  voteFilterToggler = () => {
+  toggleSelect = () => {
     const { isDropdownActive } = this.state
     this.setState(() => ({ isDropdownActive: !isDropdownActive }))
+  }
+
+  closeSelectOnFilter = (setVoteFilter, val) => {
+    this.toggleSelect()
+    setVoteFilter(val)
   }
 
   render() {
@@ -22,17 +27,19 @@ class VoteFilterList extends React.Component {
       <CinemaContext.Consumer>
         {({ setVoteFilter, voteFilter }) => (
           <VoteFilterListStyled>
-            <VoteFilterSelect onClick={this.voteFilterToggler}>
+            <VoteFilterSelect onClick={this.toggleSelect}>
               <VoteFilterSelectText>Vote {voteFilter}</VoteFilterSelectText>{' '}
               <VoteFilterIcon />
             </VoteFilterSelect>
-            <VoteFilterOptions>
+            <VoteFilterOptions active={isDropdownActive}>
               {TMDB_VOTE_RATING_LIST.map(rating => (
                 <VoteFilter
                   key={rating}
                   ratingValue={rating}
                   isActive={voteFilter === rating}
-                  setVoteFilter={setVoteFilter}
+                  setVoteFilter={val =>
+                    this.closeSelectOnFilter(setVoteFilter, val)
+                  }
                 />
               ))}
             </VoteFilterOptions>
@@ -45,11 +52,11 @@ class VoteFilterList extends React.Component {
 
 const VoteFilterListStyled = styled.div`
   display: flex;
+  position: relative;
 `
 
 const VoteFilterSelect = styled.div`
   cursor: pointer;
-  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -68,8 +75,14 @@ const VoteFilterOptions = styled.div`
   top: 100%;
   width: 100%;
   left: 0;
+  padding: 2px 0;
   background-color: ${props => props.theme.mainSectionFilterBarBg};
   opacity: 0;
+  ${props =>
+    props.active &&
+    `
+    opacity: 1;
+  `}
 `
 
 export default VoteFilterList

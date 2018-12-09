@@ -7,10 +7,15 @@ import MovieDate from './MovieDate'
 
 const MovieContext = createContext()
 
-const Movie = ({ children, ...restOfProps }) => (
-  <MovieContext.Provider value={restOfProps}>
-    <MovieStyled>{children}</MovieStyled>
-  </MovieContext.Provider>
+const Movie = React.memo(
+  ({ children, ...restOfProps }) => {
+    return (
+      <MovieContext.Provider value={restOfProps}>
+        <MovieStyled>{children}</MovieStyled>
+      </MovieContext.Provider>
+    )
+  },
+  (prevProps, nextProps) => prevProps.id === nextProps.id
 )
 
 Movie.Cover = MovieCover
