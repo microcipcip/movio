@@ -1,42 +1,27 @@
-import React, { Component, createContext } from 'react'
+import React, { createContext } from 'react'
 import PropTypes from 'prop-types' // eslint-disable-line no-unused-vars
+import checkCompoundConsumer from 'helpers/checkCompoundConsumer'
 import MovieCover from './MovieCover'
 import MovieTitle from './MovieTitle'
 import MovieDate from './MovieDate'
 
 const MovieContext = createContext()
 
-class Movie extends Component {
-  static Cover = MovieCover
-  static Title = MovieTitle
-  static Date = MovieDate
+const Movie = ({ children, ...restOfProps }) => (
+  <MovieContext.Provider value={restOfProps}>{children}</MovieContext.Provider>
+)
 
-  render() {
-    const { children, ...restOfProps } = this.props
-    console.log(restOfProps)
-    return (
-      <MovieContext.Provider value={restOfProps}>
-        {children}
-      </MovieContext.Provider>
-    )
-  }
-}
+Movie.Cover = MovieCover
+Movie.Title = MovieTitle
+Movie.Date = MovieDate
 
 Movie.propTypes = {}
 Movie.defaultProps = {}
 
 // prevent Consumer from being used outside tha parent
-export const MovieConsumer = ({ children }) => (
-  <MovieContext.Consumer>
-    {ctx => {
-      if (!ctx) {
-        throw new Error(
-          'Compound components of Movie should render beneath Movie'
-        )
-      }
-      return children(ctx)
-    }}
-  </MovieContext.Consumer>
+export const MovieConsumer = checkCompoundConsumer(
+  MovieContext,
+  'Compound components of Movie should render beneath it'
 )
 
 export default Movie
