@@ -74,7 +74,7 @@ export const cGreyDark = '#111111'
 export const cGreyMedium = '#7c7c7c'
 export const cGreyLight = '#c3c3c3'
 export const cWhite = '#FFFFFF'
-export const cBlue = '#2b41ff'
+export const cBlue = '#1a7eff'
 export const cBlueDark = '#0400ff'
 export const theme = {
   dark: {
@@ -88,6 +88,8 @@ export const theme = {
     voteFilterSelectBorderColor: lighten(0.1, cGreyDark),
     voteFilterSelectTextColor: lighten(0.5, cGreyDark),
     voteFilterBgHover: lighten(0.02, cGreyDark),
+    genreLabelTextColor: darken(0.4, cWhite),
+    genreLabelTextColorHover: cBlue,
     bg: cGreyDark,
     textColor: cWhite,
     textColorLight: cGreyLight,
@@ -105,6 +107,8 @@ export const theme = {
     voteFilterSelectBorderColor: darken(0.1, cWhite),
     voteFilterSelectTextColor: darken(0.5, cWhite),
     voteFilterBgHover: darken(0.2, cWhite),
+    genreLabelTextColor: darken(0.2, cWhite),
+    genreLabelTextColorHover: darken(0.2, cWhite),
     bg: cWhite,
     textColor: cBlack,
     textColorLight: cGreyMedium,
