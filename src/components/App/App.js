@@ -63,7 +63,9 @@ class App extends Component {
 
   toggleSideSection = () => {
     const { sideSectionActive } = this.state
-    this.setState({ sideSectionActive: !sideSectionActive })
+    this.setState({
+      sideSectionActive: !sideSectionActive,
+    })
   }
 
   // state

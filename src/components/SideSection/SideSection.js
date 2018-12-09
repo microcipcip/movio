@@ -2,12 +2,17 @@ import React from 'react'
 import styled from 'styled-components'
 import * as s from 'styles/vars'
 import bp from 'styles/mixins/bp'
+import CinemaContext from 'components/App/CinemaContext'
 import GenreFilterList from 'components/GenreFilterList'
 
 const SideSection = props => (
-  <SideSectionStyled>
-    <GenreFilterList />
-  </SideSectionStyled>
+  <CinemaContext.Consumer>
+    {({ sideSectionActive }) => (
+      <SideSectionStyled active={sideSectionActive}>
+        <GenreFilterList />
+      </SideSectionStyled>
+    )}
+  </CinemaContext.Consumer>
 )
 
 const SideSectionStyled = styled.div`
@@ -15,13 +20,23 @@ const SideSectionStyled = styled.div`
   position: fixed;
   top: ${s.headerHeight};
   left: 0;
-  width: ${s.sideSectionWidth};
-  height: calc(${s.sideSectionHeight});
   overflow-y: auto;
-  border-right: 1px solid ${props => props.theme.sideSectionBorderColor};
   background-color: ${props => props.theme.bg};
   ${bp.down('m')`
-    display: none;
+    width: 100%;
+    height: calc(100vh - ${s.headerHeight});
+    transform: translateY(-100%);
+    transition: .2s ease-in-out;
+    ${props =>
+      props.active &&
+      `
+      transform: translateY(0%);
+    `}
+  `}
+  ${bp.up('m')`
+    width: ${s.sideSectionWidth};
+    height: calc(${s.sideSectionHeight});
+    border-right: 1px solid ${props => props.theme.sideSectionBorderColor};
   `}
 `
 

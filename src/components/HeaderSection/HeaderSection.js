@@ -1,5 +1,5 @@
 import React from 'react'
-import { FaBars } from 'react-icons/fa'
+import { FaBars, FaTimes } from 'react-icons/fa'
 import styled from 'styled-components'
 import * as s from 'styles/vars'
 import bp from 'styles/mixins/bp'
@@ -7,10 +7,10 @@ import CinemaContext from 'components/App/CinemaContext'
 
 const HeaderSection = props => (
   <CinemaContext.Consumer>
-    {({ toggleSideSection }) => (
+    {({ toggleSideSection, sideSectionActive }) => (
       <HeaderSectionStyled>
         <HeaderToggleSidebar onClick={toggleSideSection}>
-          <FaBars />
+          {sideSectionActive ? <FaTimes /> : <FaBars />}
         </HeaderToggleSidebar>
         <HeaderTitle>Movio</HeaderTitle>
         <HeaderToken />
