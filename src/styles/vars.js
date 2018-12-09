@@ -1,4 +1,4 @@
-import { lighten, darken, stripUnit } from 'polished'
+import { lighten, darken, stripUnit, transparentize } from 'polished'
 
 // typography
 export const fontFamily = 'Open Sans, sans-serif'
@@ -46,7 +46,7 @@ export const bp = {
 export const headerHeight = '50px'
 
 // mainSectionFilterBar
-export const mainSectionFilterBarHeight = '36px'
+export const mainSectionFilterBarHeight = '46px'
 
 // mainSection
 export const mainSectionGutter = '20px'
@@ -82,7 +82,11 @@ export const theme = {
     headerSectionBorderColor: darken(0.02, cGreyDark),
     headerTitle: darken(0.5, cWhite),
     mainSectionFilterBarBg: cGreyDark,
+    mainSectionFilterShadowBarBg: transparentize(0.5, cGreyDark),
+    mainSectionFilterSortByColor: lighten(0.3, cGreyDark),
     sideSectionBorderColor: darken(0.03, cGreyDark),
+    voteFilterSelectBorderColor: lighten(0.1, cGreyDark),
+    voteFilterSelectTextColor: lighten(0.5, cGreyDark),
     bg: cGreyDark,
     textColor: cWhite,
     textColorLight: cGreyLight,
@@ -94,7 +98,11 @@ export const theme = {
     headerSectionBorderColor: darken(0.1, cWhite),
     headerTitle: lighten(0.5, cBlack),
     mainSectionFilterBarBg: cWhite,
+    mainSectionFilterShadowBarBg: transparentize(0.5, cWhite),
+    mainSectionFilterSortByColor: darken(0.3, cWhite),
     sideSectionBorderColor: darken(0.1, cWhite),
+    voteFilterSelectBorderColor: darken(0.1, cWhite),
+    voteFilterSelectTextColor: darken(0.5, cWhite),
     bg: cWhite,
     textColor: cBlack,
     textColorLight: cGreyMedium,

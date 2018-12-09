@@ -16,7 +16,7 @@ const MainSectionStyled = styled.div`
   order: 3;
   flex: 1;
   margin-top: ${s.mainSectionMarginTop};
-  padding: ${s.mainSectionGutter};
+  padding: 0 ${s.mainSectionGutter} ${s.mainSectionGutter};
   ${bp.up('m')`
     margin-left: ${s.sideSectionWidth};
   `}

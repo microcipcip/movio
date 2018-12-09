@@ -18,6 +18,7 @@ class App extends Component {
 
   fetchGenres = async movieList => {
     const { genres } = await fetchApi('genre/movie/list')
+    // initialize the isChecked property
     const setIsChecked = genre => {
       genre.isChecked = false
       return genre
