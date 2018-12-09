@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import * as s from 'styles/vars'
 import bp from 'styles/mixins/bp'
 import GenreFilterList from 'components/GenreFilterList'
 
@@ -10,14 +11,19 @@ const SideSection = props => (
 )
 
 const SideSectionStyled = styled.div`
-  order: 2;
+  z-index: ${s.zIndex.sideSection};
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: ${s.sideSectionWidth};
+  height: calc(${s.sideSectionHeight});
+  border-right: 1px solid ${props => props.theme.sideSectionBorderColor};
+  background-color: ${props => props.theme.bg};
   ${bp.down('m')`
     display: none;
-    max-width: 100%;  
-    flex-basis: 100%;  
   `}
   ${bp.up('m')`
-    flex: 0 0 230px; 
+    //width: 230px; 
   `}
 `
 

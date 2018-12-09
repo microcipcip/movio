@@ -15,10 +15,10 @@ const MainSection = props => (
 const MainSectionStyled = styled.div`
   order: 3;
   flex: 1;
-  padding: 0 ${s.mainSectionGutter} ${s.mainSectionGutter};
-  ${bp.down('m')`
-    max-width: 100%;  
-    flex-basis: 100%;  
+  margin-top: ${s.mainSectionMarginTop};
+  padding: ${s.mainSectionGutter};
+  ${bp.up('m')`
+    margin-left: ${s.sideSectionWidth};
   `}
 `
 

@@ -1,3 +1,5 @@
+import { lighten, darken, stripUnit } from 'polished'
+
 // typography
 export const fontFamily = 'Open Sans, sans-serif'
 export const fontSizeValue = 1.8
@@ -16,31 +18,6 @@ export const h6FontSize = `${fontSizeValue}rem`
 // spacing
 export const baseSpacing = `${baseLineHeight}em`
 export const smallSpacing = baseLineHeight / 2
-
-// theme
-export const cBlack = '#000000'
-export const cGreyDark = '#020202'
-export const cGreyMedium = '#7c7c7c'
-export const cGreyLight = '#c3c3c3'
-export const cWhite = '#FFFFFF'
-export const cBlue = '#2b41ff'
-export const cBlueDark = '#0400ff'
-export const theme = {
-  dark: {
-    bg: cGreyDark,
-    textColor: cWhite,
-    textColorLight: cGreyLight,
-    actionColor: cBlue,
-    actionColorHover: cBlueDark,
-  },
-  light: {
-    bg: cWhite,
-    textColor: cBlack,
-    textColorLight: cGreyMedium,
-    actionColor: cBlue,
-    actionColorHover: cBlueDark,
-  },
-}
 
 // device
 export const deviceWidthMax = '1200px'
@@ -65,8 +42,63 @@ export const bp = {
   xxxxxxl: 1700,
 }
 
+// headerSection
+export const headerHeight = '50px'
+
+// mainSectionFilterBar
+export const mainSectionFilterBarHeight = '36px'
+
 // mainSection
 export const mainSectionGutter = '20px'
+export const mainSectionMarginTop = `${stripUnit(headerHeight) +
+  stripUnit(mainSectionFilterBarHeight)}px`
+
+// sideSection
+export const sideSectionWidth = '230px'
+export const sideSectionHeight = `100vh - ${stripUnit(headerHeight) +
+  stripUnit(mainSectionFilterBarHeight)}px`
 
 // movie
 export const movieListGutter = '16px'
+
+// zindex
+export const zIndex = {
+  header: 4,
+  mainSectionFilteredBar: 3,
+  sideSection: 3,
+}
+
+// theme
+export const cBlack = '#000000'
+export const cGreyDark = '#020202'
+export const cGreyMedium = '#7c7c7c'
+export const cGreyLight = '#c3c3c3'
+export const cWhite = '#FFFFFF'
+export const cBlue = '#2b41ff'
+export const cBlueDark = '#0400ff'
+export const theme = {
+  dark: {
+    headerSectionBg: cGreyDark,
+    headerSectionBorderColor: lighten(0.06, cGreyDark),
+    headerTitle: darken(0.3, cWhite),
+    mainSectionFilterBarBg: cGreyDark,
+    sideSectionBorderColor: lighten(0.06, cGreyDark),
+    bg: cGreyDark,
+    textColor: cWhite,
+    textColorLight: cGreyLight,
+    actionColor: cBlue,
+    actionColorHover: cBlueDark,
+  },
+  light: {
+    headerSectionBg: cWhite,
+    headerSectionBorderColor: darken(0.1, cWhite),
+    headerTitle: lighten(0.5, cBlack),
+    mainSectionFilterBarBg: cWhite,
+    sideSectionBorderColor: darken(0.1, cWhite),
+    bg: cWhite,
+    textColor: cBlack,
+    textColorLight: cGreyMedium,
+    actionColor: cBlue,
+    actionColorHover: cBlueDark,
+  },
+}
