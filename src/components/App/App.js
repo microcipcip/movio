@@ -9,38 +9,69 @@ import MainSection from 'components/MainSection'
 import SideSection from 'components/SideSection'
 
 class App extends Component {
-  getMovies = async () => {
+  fetchMovies = async () => {
     const { results } = await fetchApi('movie/now_playing')
-    return results
+    // sort by popularity once so we don't have to do it ever again
+    // (although it seems that the API is sorted by popularity by default)
+    return results.sort((a, b) => b.popularity - a.popularity)
   }
 
-  getGenres = async movieList => {
+  fetchGenres = async movieList => {
     const { genres } = await fetchApi('genre/movie/list')
-    return genres.filter(({ id }) =>
-      movieList.some(movie => movie.genre_ids.includes(id))
-    )
+    const setIsChecked = genre => {
+      genre.isChecked = false
+      return genre
+    }
+    return genres
+      .map(setIsChecked)
+      .filter(({ id }) => movieList.some(movie => movie.genre_ids.includes(id)))
   }
 
-  addGenreFilter = genreId => {}
+  filterMovies = () => {
+    const genreList = this.getGenreActiveFilters()
+    return this.movieFetchedList.filter(movie => movie)
+  }
 
-  removeGenreFilter = genreId => {}
+  getGenreActiveFilters = () => {
+    return this.state.genreList.filter(gender => gender.isChecked)
+  }
+
+  toggleGenreFilter = (genreId, isChecked) => {
+    const setIsChecked = genre => {
+      const genreCopy = { ...genre }
+      if (genreCopy.id === genreId) {
+        genreCopy.isChecked = !isChecked
+      }
+      return genreCopy
+    }
+    this.setState(() => ({
+      genreList: this.state.genreList.map(setIsChecked),
+    }))
+  }
 
   setVoteFilter = voteValue => {}
 
+  // state
+  movieFetchedList = []
+  genreFetchedList = []
+
   state = {
     ...cinemaContextState,
-    addGenreFilter: this.addGenreFilter,
-    removeGenreFilter: this.removeGenreFilter,
+    toggleGenreFilter: this.toggleGenreFilter,
+    setVoteFilter: this.setVoteFilter,
   }
 
   async componentDidMount() {
     try {
       this.setState(() => ({ isFetching: true }))
-      const movieList = await this.getMovies()
-      const genreList = await this.getGenres(movieList)
+      // keep a copy of the original list
+      // so we can clone it when needed
+      this.movieFetchedList = await this.fetchMovies()
+      this.genreFetchedList = await this.fetchGenres(this.movieFetchedList)
+
       this.setState(() => ({
-        movieList,
-        genreList,
+        movieList: [...this.movieFetchedList],
+        genreList: [...this.genreFetchedList],
         isFetching: false,
       }))
     } catch (err) {

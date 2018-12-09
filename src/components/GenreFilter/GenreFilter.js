@@ -1,14 +1,14 @@
 import React from 'react'
 import styled from 'styled-components'
 
-const GenreFilter = ({ id, name }) => (
+const GenreFilter = ({ genre: { id, name, isChecked }, toggleGenreFilter }) => (
   <div>
     <GenreInputStyled
       type="checkbox"
       name="checkbox"
       id={`genre-${name}`}
       value={name}
-      onChange={() => {}}
+      onChange={() => toggleGenreFilter(id, isChecked)}
     />
     <GenreLabelStyled htmlFor={`genre-${name}`}>{name}</GenreLabelStyled>
   </div>

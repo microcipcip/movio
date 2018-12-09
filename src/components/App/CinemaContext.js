@@ -4,9 +4,7 @@ const noop = () => {}
 export const cinemaContextState = {
   movieList: [],
   genreList: [],
-  genreFilterList: [],
-  addGenreFilter: noop,
-  removeGenreFilter: noop,
+  toggleGenreFilter: noop,
   setVoteFilter: noop,
   isFetching: false,
   errorMsg: '',

@@ -4,8 +4,14 @@ import GenreFilter from 'components/GenreFilter'
 
 const GenreFilterList = props => (
   <CinemaContext.Consumer>
-    {({ genreList }) =>
-      genreList.map(genre => <GenreFilter key={genre.id} {...genre} />)
+    {({ genreList, toggleGenreFilter }) =>
+      genreList.map(genre => (
+        <GenreFilter
+          key={genre.id}
+          genre={genre}
+          toggleGenreFilter={toggleGenreFilter}
+        />
+      ))
     }
   </CinemaContext.Consumer>
 )
