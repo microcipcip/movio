@@ -42,6 +42,9 @@ export const bp = {
   xxxxxxl: 1700,
 }
 
+// general
+export const gutter = '10px'
+
 // headerSection
 export const headerHeight = '50px'
 

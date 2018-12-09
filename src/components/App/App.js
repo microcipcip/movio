@@ -61,6 +61,11 @@ class App extends Component {
     this.setState({ voteFilter })
   }
 
+  toggleSideSection = () => {
+    const { sideSectionActive } = this.state
+    this.setState({ sideSectionActive: !sideSectionActive })
+  }
+
   // state
   movieFetchedList = []
   genreFetchedList = []
@@ -69,6 +74,7 @@ class App extends Component {
     ...cinemaContextState,
     toggleGenreFilter: this.toggleGenreFilter,
     setVoteFilter: this.setVoteFilter,
+    toggleSideSection: this.toggleSideSection,
   }
 
   componentDidUpdate(prevProps, prevState, prevContext) {

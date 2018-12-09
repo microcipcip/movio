@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { FaCaretDown, FaCaretUp } from 'react-icons/fa'
+import * as s from 'styles/vars'
 import { TMDB_VOTE_RATING_LIST } from 'config'
 import CinemaContext from 'components/App/CinemaContext'
 import VoteFilter from 'components/VoteFilter'
@@ -63,7 +64,7 @@ const VoteFilterSelect = styled.div`
   justify-content: space-between;
   align-items: center;
   min-width: 200px;
-  padding: 4px 10px;
+  padding: 4px ${s.gutter};
   color: ${props => props.theme.voteFilterSelectTextColor};
   border: 1px solid ${props => props.theme.voteFilterSelectBorderColor};
 `

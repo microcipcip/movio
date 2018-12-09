@@ -1,5 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
+import * as s from 'styles/vars'
+
 const VoteFilter = ({ ratingValue, setVoteFilter, isActive }) => (
   <VoteFilterStyled
     active={isActive}
@@ -11,7 +13,7 @@ const VoteFilter = ({ ratingValue, setVoteFilter, isActive }) => (
 
 const VoteFilterStyled = styled.div`
   cursor: pointer;
-  padding: 2px 10px;
+  padding: 2px ${s.gutter};
   ${props =>
     props.active &&
     `
