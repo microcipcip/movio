@@ -25,6 +25,7 @@ export default css`
   h6 {
     margin: 0 0 ${s.smallSpacing};
     font-family: ${s.headingFontFamily};
+    font-weight: normal;
     line-height: ${s.headingLineHeight};
   }
   h1 {

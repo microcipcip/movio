@@ -1,12 +1,13 @@
 import React, { Component } from 'react'
-import { ThemeProvider } from 'styled-components'
+import PropTypes from 'prop-types' // eslint-disable-line no-unused-vars
+import styled, { ThemeProvider } from 'styled-components'
 import Styles from 'styles'
 import { theme } from 'styles/vars'
 import fetchApi from 'utils/fetchApi'
+import CinemaContext, { cinemaContextState } from './CinemaContext'
 import HeaderSection from 'components/HeaderSection'
 import MainSection from 'components/MainSection'
 import SideSection from 'components/SideSection'
-import CinemaContext, { cinemaContextState } from './CinemaContext'
 
 class App extends Component {
   state = { ...cinemaContextState }
@@ -52,19 +53,25 @@ class App extends Component {
     return (
       <ThemeProvider theme={theme.dark}>
         <CinemaContext.Provider value={this.state}>
-          <React.Fragment>
+          <AppStyled>
             <Styles />
-            <div>
-              App
-              <HeaderSection />
-              <MainSection />
-              <SideSection />
-            </div>
-          </React.Fragment>
+            <HeaderSection />
+            <MainSection />
+            <SideSection />
+          </AppStyled>
         </CinemaContext.Provider>
       </ThemeProvider>
     )
   }
 }
+
+const AppStyled = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  min-height: 100vh;
+`
+
+App.propTypes = {}
+App.defaultProps = {}
 
 export default App
