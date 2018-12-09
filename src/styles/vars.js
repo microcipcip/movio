@@ -70,7 +70,7 @@ export const zIndex = {
 
 // theme
 export const cBlack = '#000000'
-export const cGreyDark = '#020202'
+export const cGreyDark = '#111111'
 export const cGreyMedium = '#7c7c7c'
 export const cGreyLight = '#c3c3c3'
 export const cWhite = '#FFFFFF'
@@ -78,11 +78,11 @@ export const cBlue = '#2b41ff'
 export const cBlueDark = '#0400ff'
 export const theme = {
   dark: {
-    headerSectionBg: cGreyDark,
-    headerSectionBorderColor: lighten(0.06, cGreyDark),
-    headerTitle: darken(0.3, cWhite),
+    headerSectionBg: darken(0.01, cGreyDark),
+    headerSectionBorderColor: darken(0.02, cGreyDark),
+    headerTitle: darken(0.5, cWhite),
     mainSectionFilterBarBg: cGreyDark,
-    sideSectionBorderColor: lighten(0.06, cGreyDark),
+    sideSectionBorderColor: darken(0.03, cGreyDark),
     bg: cGreyDark,
     textColor: cWhite,
     textColorLight: cGreyLight,

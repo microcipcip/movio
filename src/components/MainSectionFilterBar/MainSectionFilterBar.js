@@ -20,7 +20,6 @@ const MainSectionFilterBarStyled = styled.div`
   width: calc(100% - ${s.sideSectionWidth});
   height: ${s.mainSectionFilterBarHeight};
   padding: 0 ${s.mainSectionGutter};
-  border-bottom: 1px solid ${props => props.theme.sideSectionBorderColor};
   background: ${props => props.theme.mainSectionFilterBarBg};
   box-shadow: 0 0 20px 20px ${props => props.theme.bg};
 `

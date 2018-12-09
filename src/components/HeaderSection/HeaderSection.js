@@ -18,7 +18,7 @@ const HeaderSectionStyled = styled.div`
   left: 0;
   width: 100%;
   height: ${s.headerHeight};
-  border-bottom: 1px solid ${props => props.theme.headerSectionBorderColor};
+  border-bottom: 2px solid ${props => props.theme.headerSectionBorderColor};
   background: ${props => props.theme.headerSectionBg};
 `
 
