@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import * as s from 'styles/vars'
+import bp from 'styles/mixins/bp'
 import VoteFilterList from 'components/VoteFilterList'
 
 const MainSectionFilterBar = props => (
@@ -17,12 +18,16 @@ const MainSectionFilterBarStyled = styled.div`
   align-items: center;
   position: fixed;
   top: ${s.headerHeight};
-  left: ${s.sideSectionWidth};
-  width: calc(100% - ${s.sideSectionWidth});
+  left: 0;
+  width: 100%;
   height: ${s.mainSectionFilterBarHeight};
   padding: 0 ${s.mainSectionGutter};
   background: ${props => props.theme.mainSectionFilterBarBg};
   box-shadow: 0 0 20px 20px ${props => props.theme.mainSectionFilterShadowBarBg};
+  ${bp.up('m')`
+    left: ${s.sideSectionWidth};
+    width: calc(100% - ${s.sideSectionWidth});
+  `}
 `
 
 const MainSectionFilterSortBy = styled.div`

@@ -28,7 +28,9 @@ class VoteFilterList extends React.Component {
         {({ setVoteFilter, voteFilter }) => (
           <VoteFilterListStyled>
             <VoteFilterSelect onClick={this.toggleSelect}>
-              <VoteFilterSelectText>Vote {voteFilter}</VoteFilterSelectText>{' '}
+              <VoteFilterSelectText>
+                Vote average > {voteFilter}
+              </VoteFilterSelectText>{' '}
               <VoteFilterIcon />
             </VoteFilterSelect>
             <VoteFilterOptions active={isDropdownActive}>
@@ -60,7 +62,7 @@ const VoteFilterSelect = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  min-width: 150px;
+  min-width: 200px;
   padding: 4px 10px;
   color: ${props => props.theme.voteFilterSelectTextColor};
   border: 1px solid ${props => props.theme.voteFilterSelectBorderColor};
