@@ -19,10 +19,10 @@ const GenreFilter = React.memo(
     </GenreFilterStyled>
   ),
   (
-    { genre: { id: prevId, isChecked: prevIsChecked } },
-    { genre: { id: nextId, isChecked: nextIsChecked } }
+    { genre: { isChecked: prevIsChecked } },
+    { genre: { isChecked: nextIsChecked } }
   ) => {
-    return prevId === nextId && prevIsChecked === nextIsChecked
+    return prevIsChecked === nextIsChecked
   }
 )
 

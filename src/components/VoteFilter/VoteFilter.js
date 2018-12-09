@@ -2,13 +2,18 @@ import React from 'react'
 import styled from 'styled-components'
 import * as s from 'styles/vars'
 
-const VoteFilter = ({ ratingValue, setVoteFilter, isActive }) => (
-  <VoteFilterStyled
-    active={isActive}
-    onClick={() => setVoteFilter(ratingValue)}
-  >
-    {ratingValue}
-  </VoteFilterStyled>
+const VoteFilter = React.memo(
+  ({ ratingValue, setVoteFilter, isActive }) => (
+    <VoteFilterStyled
+      active={isActive}
+      onClick={() => setVoteFilter(ratingValue)}
+    >
+      {ratingValue}
+    </VoteFilterStyled>
+  ),
+  ({ isActive: prevIsActive }, { isActive: nextIsActive }) => {
+    return prevIsActive === nextIsActive
+  }
 )
 
 const VoteFilterStyled = styled.div`
