@@ -20,7 +20,6 @@ Movie.Date = MovieDate
 const MovieStyled = styled.div`
   display: flex;
   flex-direction: column;
-  width: 100%;
 `
 
 // prevent Consumer from being used outside tha parent

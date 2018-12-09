@@ -25,10 +25,10 @@ const MovieList = props => (
 
 const MovieListStyled = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(140px, 2fr));
+  grid-template-columns: repeat(auto-fill, minmax(140px, 2fr));
   grid-gap: ${s.movieListGutter};
   ${bp.up('m')`
-    grid-template-columns: repeat(auto-fit, minmax(200px, 2fr));
+    grid-template-columns: repeat(auto-fill, minmax(200px, 2fr));
   `}
 `
 
