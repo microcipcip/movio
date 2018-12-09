@@ -7,7 +7,7 @@ import { MovieConsumer } from './Movie'
 const MovieDate = props => (
   <MovieConsumer>
     {({ release_date }) => (
-      <MovieDateStyled datetime={release_date}>
+      <MovieDateStyled dateTime={release_date}>
         {formatMovieDate(release_date)}
       </MovieDateStyled>
     )}

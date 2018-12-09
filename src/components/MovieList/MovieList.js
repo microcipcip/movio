@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types' // eslint-disable-line no-unused-vars
 import styled from 'styled-components'
 import * as s from 'styles/vars'
+import bp from 'styles/mixins/bp'
 import CinemaContext from 'components/App/CinemaContext'
 import Movie from 'components/Movie'
 
@@ -24,12 +25,12 @@ const MovieList = props => (
 )
 
 const MovieListStyled = styled.div`
-  //display: flex;
-  //flex-wrap: wrap;
-
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(140px, 2fr));
   grid-gap: ${s.movieListGutter};
+  ${bp.up('m')`
+    grid-template-columns: repeat(auto-fit, minmax(200px, 2fr));
+  `}
 `
 
 const MovieContent = styled.div`
