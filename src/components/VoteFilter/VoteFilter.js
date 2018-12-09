@@ -1,5 +1,7 @@
 import React from 'react'
 
-const VoteFilter = props => <div>VoteFilter</div>
+const VoteFilter = ({ ratingValue, setVoteFilter }) => (
+  <div onClick={() => setVoteFilter(ratingValue)}>{ratingValue}</div>
+)
 
 export default VoteFilter

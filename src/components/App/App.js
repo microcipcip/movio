@@ -33,14 +33,16 @@ class App extends Component {
       .map(gender => gender.id)
   }
 
-  filterMovies = () => {
+  setFilteredMovies = () => {
+    const { voteFilter } = this.state
     const genreIdList = this.getGenreActiveIdList()
     const genreIdListLength = genreIdList.length
     this.setState(() => ({
-      movieList: this.movieFetchedList.filter(movie =>
-        movie.genre_ids.some(
-          genreId => !genreIdListLength || genreIdList.includes(genreId)
-        )
+      movieList: this.movieFetchedList.filter(
+        movie =>
+          movie.genre_ids.some(
+            genreId => !genreIdListLength || genreIdList.includes(genreId)
+          ) && movie.vote_average > voteFilter
       ),
     }))
   }
@@ -74,7 +76,7 @@ class App extends Component {
       prevState.voteFilter !== voteFilter ||
       prevState.genreList !== genreList
     ) {
-      this.filterMovies()
+      this.setFilteredMovies()
     }
   }
 

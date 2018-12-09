@@ -3,11 +3,11 @@ import styled from 'styled-components'
 import * as s from 'styles/vars'
 import bp from 'styles/mixins/bp'
 import MovieList from 'components/MovieList'
-import VoteFilter from 'components/VoteFilter'
+import MainSectionFilterBar from 'components/MainSectionFilterBar'
 
 const MainSection = props => (
   <MainSectionStyled>
-    <VoteFilter />
+    <MainSectionFilterBar />
     <MovieList />
   </MainSectionStyled>
 )
