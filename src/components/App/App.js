@@ -27,29 +27,36 @@ class App extends Component {
       .filter(({ id }) => movieList.some(movie => movie.genre_ids.includes(id)))
   }
 
-  filterMovies = () => {
-    const genreList = this.getGenreActiveFilters()
-    return this.movieFetchedList.filter(movie => movie)
+  getGenreActiveIdList = () => {
+    return this.state.genreList
+      .filter(gender => gender.isChecked)
+      .map(gender => gender.id)
   }
 
-  getGenreActiveFilters = () => {
-    return this.state.genreList.filter(gender => gender.isChecked)
+  filterMovies = () => {
+    const genreIdList = this.getGenreActiveIdList()
+    const genreIdListLength = genreIdList.length
+    this.setState(() => ({
+      movieList: this.movieFetchedList.filter(movie =>
+        movie.genre_ids.some(
+          genreId => !genreIdListLength || genreIdList.includes(genreId)
+        )
+      ),
+    }))
   }
 
   toggleGenreFilter = (genreId, isChecked) => {
     const setIsChecked = genre => {
       const genreCopy = { ...genre }
-      if (genreCopy.id === genreId) {
-        genreCopy.isChecked = !isChecked
-      }
+      if (genreCopy.id === genreId) genreCopy.isChecked = !isChecked
       return genreCopy
     }
-    this.setState(() => ({
-      genreList: this.state.genreList.map(setIsChecked),
-    }))
+    this.setState(() => ({ genreList: this.state.genreList.map(setIsChecked) }))
   }
 
-  setVoteFilter = voteValue => {}
+  setVoteFilter = voteFilter => {
+    this.setState({ voteFilter })
+  }
 
   // state
   movieFetchedList = []
@@ -59,6 +66,16 @@ class App extends Component {
     ...cinemaContextState,
     toggleGenreFilter: this.toggleGenreFilter,
     setVoteFilter: this.setVoteFilter,
+  }
+
+  componentDidUpdate(prevProps, prevState, prevContext) {
+    const { voteFilter, genreList } = this.state
+    if (
+      prevState.voteFilter !== voteFilter ||
+      prevState.genreList !== genreList
+    ) {
+      this.filterMovies()
+    }
   }
 
   async componentDidMount() {
@@ -107,6 +124,7 @@ class App extends Component {
 
 const AppStyled = styled.div`
   display: flex;
+  align-content: flex-start;
   flex-wrap: wrap;
   min-height: 100vh;
 `
