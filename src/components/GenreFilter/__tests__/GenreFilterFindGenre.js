@@ -1,8 +1,8 @@
 import React from 'react'
-import { customRender, genreList, fireEvent } from 'utils/testUtils'
+import { customRender, genreList } from 'utils/testUtils'
 import GenreFilter from '../GenreFilter'
 
-it('Should find the first genre and call toggleGenreFilter', async () => {
+it('Should find the first genre', async () => {
   const genre = genreList[0]
   const toggleGenreFilter = jest.fn()
   const { getByLabelText } = customRender(
@@ -10,8 +10,4 @@ it('Should find the first genre and call toggleGenreFilter', async () => {
   )
 
   const input = getByLabelText(genreList[0].name)
-  fireEvent.click(input)
-
-  expect(toggleGenreFilter).toHaveBeenCalledTimes(1)
-  expect(toggleGenreFilter).toHaveBeenCalledWith(genre.id, genre.isChecked)
 })

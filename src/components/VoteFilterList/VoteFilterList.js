@@ -28,7 +28,10 @@ class VoteFilterList extends React.Component {
       <CinemaContext.Consumer>
         {({ setVoteFilter, voteFilter }) => (
           <VoteFilterListStyled>
-            <VoteFilterSelect onClick={this.toggleSelect}>
+            <VoteFilterSelect
+              onClick={this.toggleSelect}
+              data-testid="VoteFilterSelect"
+            >
               <VoteFilterSelectText>
                 Vote average > {voteFilter}
               </VoteFilterSelectText>{' '}
