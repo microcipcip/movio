@@ -11,6 +11,11 @@
 
 IE11 requires polyfills and fallback styling for CSS grid.
 
+## Todo
+
+- Fade in when filtering.
+- Add image lazy load transition.
+
 ## Known issues
 
 - `Vote average` is firing multiple times and **must** be optimized.
