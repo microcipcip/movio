@@ -11,6 +11,7 @@ const GenreFilter = React.memo(
         name="checkbox"
         id={`genre-${name}`}
         value={name}
+        checked={isChecked}
         onChange={() => toggleGenreFilter(id, isChecked)}
       />
       <GenreLabel htmlFor={`genre-${name}`}>

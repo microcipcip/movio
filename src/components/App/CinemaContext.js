@@ -1,10 +1,12 @@
 import { createContext } from 'react'
+import { TMDB_VOTE_RATING_DEFAULT } from 'config'
 
 const noop = () => {}
 export const cinemaContextState = {
   movieList: [],
   genreList: [],
-  voteFilter: 3,
+  voteFilter: TMDB_VOTE_RATING_DEFAULT,
+  resetVoteFilter: noop,
   toggleGenreFilter: noop,
   setVoteFilter: noop,
   toggleSideSection: noop,

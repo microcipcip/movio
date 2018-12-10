@@ -4,6 +4,7 @@ import Transition from 'components/Transition'
 import Loader from 'react-loader-spinner'
 import Styles from 'styles'
 import * as s from 'styles/vars'
+import { TMDB_VOTE_RATING_DEFAULT } from 'config'
 import fetchApi from 'utils/fetchApi'
 import CinemaContext, { cinemaContextState } from './CinemaContext'
 import HeaderSection from 'components/HeaderSection'
@@ -32,10 +33,14 @@ class App extends Component {
       .filter(({ id }) => movieList.some(movie => movie.genre_ids.includes(id)))
   }
 
+  resetVoteFilter = () => {
+    this.setState(() => ({ voteFilter: TMDB_VOTE_RATING_DEFAULT }))
+  }
+
   getGenreActiveIdList = () => {
     return this.state.genreList
-      .filter(gender => gender.isChecked)
-      .map(gender => gender.id)
+      .filter(genre => genre.isChecked)
+      .map(genre => genre.id)
   }
 
   setFilteredMovies = () => {
@@ -74,6 +79,37 @@ class App extends Component {
     })
   }
 
+  fetchData = async () => {
+    const { loadingTimeMin } = this.props
+    const timeStart = Date.now()
+    try {
+      this.setState(() => ({ isFetching: true }))
+      // keep a copy of the original list
+      // so we can clone it when needed
+      this.movieFetchedList = await this.fetchMovies()
+      this.genreFetchedList = await this.fetchGenres(this.movieFetchedList)
+      this.setState(() => ({
+        movieList: [...this.movieFetchedList],
+        genreList: [...this.genreFetchedList],
+        isFetching: false,
+      }))
+
+      const timeEnd = Date.now()
+      const timerDiff = (loadingTimeMin || 1500) - (timeEnd - timeStart)
+      // add a small delay just to show a cool loader
+      setTimeout(() => {
+        this.setState(() => ({ isLoading: false }))
+      }, timerDiff)
+    } catch (err) {
+      console.error(err)
+      this.setState(() => ({
+        errorMsg: 'Something went wrong while fetching movieList and genreList',
+        isFetching: false,
+        isLoading: false,
+      }))
+    }
+  }
+
   // state
   themeType = 'dark' // dark or light
   movieFetchedList = []
@@ -81,6 +117,7 @@ class App extends Component {
 
   state = {
     ...cinemaContextState,
+    resetVoteFilter: this.resetVoteFilter,
     toggleGenreFilter: this.toggleGenreFilter,
     setVoteFilter: this.setVoteFilter,
     toggleSideSection: this.toggleSideSection,
@@ -96,43 +133,12 @@ class App extends Component {
     }
   }
 
-  fetchData = async () => {
-    const { timeout } = this.props
-    const timeStart = Date.now()
-    try {
-      this.setState(() => ({ isFetching: true }))
-      // keep a copy of the original list
-      // so we can clone it when needed
-      this.movieFetchedList = await this.fetchMovies()
-      this.genreFetchedList = await this.fetchGenres(this.movieFetchedList)
-      this.setState(() => ({
-        movieList: [...this.movieFetchedList],
-        genreList: [...this.genreFetchedList],
-        isFetching: false,
-      }))
-
-      const timeEnd = Date.now()
-      const timerDiff = (timeout || 1500) - (timeEnd - timeStart)
-      // add a small delay just to show a cool loader
-      setTimeout(() => {
-        this.setState(() => ({ isLoading: false }))
-      }, timerDiff)
-    } catch (err) {
-      console.error(err)
-      this.setState(() => ({
-        errorMsg: 'Something went wrong while fetching movieList and genreList',
-        isFetching: false,
-        isLoading: false,
-      }))
-    }
-  }
-
   async componentDidMount() {
     await this.fetchData()
   }
 
   render() {
-    const { isFetching, isLoading, errorMsg, genreList } = this.state
+    const { isFetching, isLoading, errorMsg } = this.state
     return (
       <ThemeProvider theme={s.theme[this.themeType]}>
         <CinemaContext.Provider value={this.state}>
