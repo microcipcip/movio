@@ -20,7 +20,7 @@ exports[`Should create snapshot 1`] = `
 }
 
 .c1 .input-range__label-container {
-  font-size: 1rem;
+  font-size: 1.2rem;
 }
 
 .c1 .input-range__label--value {
@@ -33,7 +33,7 @@ exports[`Should create snapshot 1`] = `
 
 .c1 .input-range__label--min,
 .c1 .input-range__label--max {
-  bottom: -1.6rem;
+  display: none;
 }
 
 <div>
