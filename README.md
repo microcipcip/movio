@@ -14,6 +14,7 @@ IE11 requires polyfills and fallback styling for CSS grid.
 ## Known issues
 
 - `Vote average` is firing multiple times and **must** be optimized.
+- `Vote average` range is too small on mobile.
 - The test library is not clearing the DOM therefore is requiring the use of multiple files.
 
 ## React create app info
