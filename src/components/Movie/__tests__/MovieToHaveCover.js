@@ -1,10 +1,10 @@
 import React from 'react'
-import { customRender, movieList, domToString } from 'utils/testUtils'
+import { customRender, movieList } from 'utils/testUtils'
 import Movie from '../Movie'
 
 it('Should have the right src and alt tag', async () => {
   const movie = movieList[0]
-  const { container, getByAltText } = customRender(
+  const { getByAltText } = customRender(
     <Movie {...movie}>
       <Movie.Cover />
       <Movie.Title />
