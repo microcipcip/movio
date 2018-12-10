@@ -5,7 +5,6 @@ import 'jest-styled-components'
 import 'jest-dom/extend-expect'
 import { genreList, movieList } from 'utils/testData'
 import * as s from 'styles/vars'
-
 import CinemaContext, { cinemaContextState } from 'components/App/CinemaContext'
 
 const customRender = (node, data = {}) => {

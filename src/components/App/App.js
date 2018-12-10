@@ -12,14 +12,16 @@ import SideSection from 'components/SideSection'
 
 class App extends Component {
   fetchMovies = async () => {
-    const { results } = await fetchApi('movie/now_playing')
+    const { movieList } = this.props
+    const { results } = movieList || (await fetchApi('movie/now_playing'))
     // sort by popularity once so we don't have to do it ever again
     // (although it seems that the API is sorted by popularity by default)
     return results.sort((a, b) => b.popularity - a.popularity)
   }
 
   fetchGenres = async movieList => {
-    const { genres } = await fetchApi('genre/movie/list')
+    const { genreList } = this.props
+    const { genres } = genreList || (await fetchApi('genre/movie/list'))
     // initialize the isChecked property
     const setIsChecked = genre => {
       genre.isChecked = false
@@ -84,7 +86,7 @@ class App extends Component {
     toggleSideSection: this.toggleSideSection,
   }
 
-  componentDidUpdate(prevProps, prevState, prevContext) {
+  componentDidUpdate(prevProps, prevState) {
     const { voteFilter, genreList } = this.state
     if (
       prevState.voteFilter !== voteFilter ||
@@ -95,6 +97,7 @@ class App extends Component {
   }
 
   fetchData = async () => {
+    const { timeout } = this.props
     const timeStart = Date.now()
     try {
       this.setState(() => ({ isFetching: true }))
@@ -109,7 +112,7 @@ class App extends Component {
       }))
 
       const timeEnd = Date.now()
-      const timerDiff = 1500 - (timeEnd - timeStart)
+      const timerDiff = (timeout || 1500) - (timeEnd - timeStart)
       // add a small delay just to show a cool loader
       setTimeout(() => {
         this.setState(() => ({ isLoading: false }))
@@ -129,7 +132,7 @@ class App extends Component {
   }
 
   render() {
-    const { isFetching, isLoading, errorMsg } = this.state
+    const { isFetching, isLoading, errorMsg, genreList } = this.state
     return (
       <ThemeProvider theme={s.theme[this.themeType]}>
         <CinemaContext.Provider value={this.state}>
