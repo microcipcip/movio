@@ -5,9 +5,12 @@ import { MovieConsumer } from './Movie'
 
 const MovieCover = props => (
   <MovieConsumer>
-    {({ poster_path }) => (
+    {({ poster_path, title }) => (
       <MovieCoverStyled>
-        <ImageStyled src={`${TMDB_API_IMG_URL}w342/${poster_path}`} alt="" />
+        <ImageStyled
+          src={`${TMDB_API_IMG_URL}w342${poster_path}`}
+          alt={title}
+        />
       </MovieCoverStyled>
     )}
   </MovieConsumer>

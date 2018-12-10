@@ -1,0 +1,71 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should create snapshot 1`] = `
+.c1 {
+  position: relative;
+}
+
+.c1:after {
+  content: '';
+  display: block;
+  padding-top: 150%;
+}
+
+.c2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 2px;
+}
+
+.c3 {
+  margin: 0;
+  font-weight: bold;
+  font-size: 1.8rem;
+}
+
+.c4 {
+  color: #c3c3c3;
+  font-size: 1.4rem;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+<div>
+  <div
+    class="c0"
+  >
+    <div
+      class="c1"
+    >
+      <img
+        alt="Venom"
+        class="c2"
+        src="https://image.tmdb.org/t/p/w342/2uNW4WbgBXL25BAbXGLnLqX71Sw.jpg"
+      />
+    </div>
+    <h2
+      class="c3"
+    >
+      Venom
+    </h2>
+    <time
+      class="c4"
+      datetime="2018-10-03"
+    >
+      03 10 2018
+    </time>
+  </div>
+</div>
+`;

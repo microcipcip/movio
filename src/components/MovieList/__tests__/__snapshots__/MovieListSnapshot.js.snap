@@ -1,0 +1,263 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should create snapshot 1`] = `
+.c2 {
+  position: relative;
+}
+
+.c2:after {
+  content: '';
+  display: block;
+  padding-top: 150%;
+}
+
+.c3 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 2px;
+}
+
+.c5 {
+  margin: 0;
+  font-weight: bold;
+  font-size: 1.8rem;
+}
+
+.c6 {
+  color: #c3c3c3;
+  font-size: 1.4rem;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c0 {
+  display: grid;
+  grid-template-columns: repeat(auto-fill,minmax(140px,2fr));
+  grid-gap: 16px;
+}
+
+.c4 {
+  padding: 10px 0 0;
+}
+
+@media only screen and (min-width:768px) {
+  .c0 {
+    grid-template-columns: repeat(auto-fill,minmax(200px,2fr));
+  }
+}
+
+<div>
+  <div
+    class="c0"
+  >
+    <div
+      class="c1"
+    >
+      <div
+        class="c2"
+      >
+        <img
+          alt="Venom"
+          class="c3"
+          src="https://image.tmdb.org/t/p/w342/2uNW4WbgBXL25BAbXGLnLqX71Sw.jpg"
+        />
+      </div>
+      <div
+        class="typ c4"
+      >
+        <h2
+          class="c5"
+        >
+          Venom
+        </h2>
+        <time
+          class="c6"
+          datetime="2018-10-03"
+        >
+          03 10 2018
+        </time>
+      </div>
+    </div>
+    <div
+      class="c1"
+    >
+      <div
+        class="c2"
+      >
+        <img
+          alt="Fantastic Beasts: The Crimes of Grindelwald"
+          class="c3"
+          src="https://image.tmdb.org/t/p/w342/uyJgTzAsp3Za2TaPiZt2yaKYRIR.jpg"
+        />
+      </div>
+      <div
+        class="typ c4"
+      >
+        <h2
+          class="c5"
+        >
+          Fantastic Beasts: The Crimes of Grindelwald
+        </h2>
+        <time
+          class="c6"
+          datetime="2018-11-14"
+        >
+          14 11 2018
+        </time>
+      </div>
+    </div>
+    <div
+      class="c1"
+    >
+      <div
+        class="c2"
+      >
+        <img
+          alt="Bohemian Rhapsody"
+          class="c3"
+          src="https://image.tmdb.org/t/p/w342/lHu1wtNaczFPGFDTrjCSzeLPTKN.jpg"
+        />
+      </div>
+      <div
+        class="typ c4"
+      >
+        <h2
+          class="c5"
+        >
+          Bohemian Rhapsody
+        </h2>
+        <time
+          class="c6"
+          datetime="2018-10-24"
+        >
+          24 10 2018
+        </time>
+      </div>
+    </div>
+    <div
+      class="c1"
+    >
+      <div
+        class="c2"
+      >
+        <img
+          alt="Mortal Engines"
+          class="c3"
+          src="https://image.tmdb.org/t/p/w342/uXJVpPXxZO4L8Rz3IG1Y8XvZJcg.jpg"
+        />
+      </div>
+      <div
+        class="typ c4"
+      >
+        <h2
+          class="c5"
+        >
+          Mortal Engines
+        </h2>
+        <time
+          class="c6"
+          datetime="2018-12-06"
+        >
+          06 12 2018
+        </time>
+      </div>
+    </div>
+    <div
+      class="c1"
+    >
+      <div
+        class="c2"
+      >
+        <img
+          alt="Robin Hood"
+          class="c3"
+          src="https://image.tmdb.org/t/p/w342/AiRfixFcfTkNbn2A73qVJPlpkUo.jpg"
+        />
+      </div>
+      <div
+        class="typ c4"
+      >
+        <h2
+          class="c5"
+        >
+          Robin Hood
+        </h2>
+        <time
+          class="c6"
+          datetime="2018-11-20"
+        >
+          20 11 2018
+        </time>
+      </div>
+    </div>
+    <div
+      class="c1"
+    >
+      <div
+        class="c2"
+      >
+        <img
+          alt="The Seven Deadly Sins: Prisoners of the Sky"
+          class="c3"
+          src="https://image.tmdb.org/t/p/w342/r6pPUVUKU5eIpYj4oEzidk5ZibB.jpg"
+        />
+      </div>
+      <div
+        class="typ c4"
+      >
+        <h2
+          class="c5"
+        >
+          The Seven Deadly Sins: Prisoners of the Sky
+        </h2>
+        <time
+          class="c6"
+          datetime="2018-08-18"
+        >
+          18 08 2018
+        </time>
+      </div>
+    </div>
+    <div
+      class="c1"
+    >
+      <div
+        class="c2"
+      >
+        <img
+          alt="Ralph Breaks the Internet"
+          class="c3"
+          src="https://image.tmdb.org/t/p/w342/m110vLaDDOCca4hfOcS5mK5cDke.jpg"
+        />
+      </div>
+      <div
+        class="typ c4"
+      >
+        <h2
+          class="c5"
+        >
+          Ralph Breaks the Internet
+        </h2>
+        <time
+          class="c6"
+          datetime="2018-11-20"
+        >
+          20 11 2018
+        </time>
+      </div>
+    </div>
+  </div>
+</div>
+`;
