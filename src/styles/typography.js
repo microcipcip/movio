@@ -1,11 +1,15 @@
 import { css } from 'styled-components'
 import * as s from './vars'
+import bp from 'styles/mixins/bp'
 
 export default css`
   html {
     overflow-y: scroll;
     height: 100%;
     font-size: 62.5%;
+    ${bp.down('m')`
+      ${props => props.sideActive && `overflow-y: hidden`}
+    `}
   }
   body {
     min-width: ${s.deviceWidthMin};

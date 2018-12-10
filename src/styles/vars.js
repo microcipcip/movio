@@ -66,10 +66,10 @@ export const movieListGutter = '16px'
 
 // zindex
 export const zIndex = {
-  AppInitWrapper: 10,
-  header: 4,
+  appInitWrapper: 10,
+  header: 5,
+  sideSection: 4,
   mainSectionFilteredBar: 3,
-  sideSection: 3,
 }
 
 // theme

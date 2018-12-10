@@ -138,12 +138,12 @@ class App extends Component {
   }
 
   render() {
-    const { isFetching, isLoading, errorMsg } = this.state
+    const { isFetching, isLoading, errorMsg, sideSectionActive } = this.state
     return (
       <ThemeProvider theme={s.theme[this.themeType]}>
         <CinemaContext.Provider value={this.state}>
           <AppStyled>
-            <Styles />
+            <Styles sideActive={sideSectionActive} />
             <AppInitLoader isLoading={isLoading} themeType={this.themeType} />
             <AppInitError errorMsg={errorMsg} />
             {!isFetching && !errorMsg && (
@@ -168,7 +168,7 @@ const AppStyled = styled.div`
 `
 
 const AppInitWrapper = styled.div`
-  z-index: ${s.zIndex.AppInitWrapper};
+  z-index: ${s.zIndex.appInitWrapper};
   display: flex;
   flex-direction: column;
   justify-content: center;
