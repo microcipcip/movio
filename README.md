@@ -1,3 +1,23 @@
+## App demo:
+
+[Click here](https://microcipcip.github.io/movio/) top view the demo online.
+
+## Tested with
+
+- Firefox
+- Chrome
+- Edge
+- Mobile/Android
+
+IE11 requires polyfills and fallback styling for CSS grid.
+
+## Known issues
+
+- `Vote average` is firing multiple times and **must** be optimized.
+- The test library is not clearing the DOM therefore is requiring the use of multiple files.
+
+## React create app info
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

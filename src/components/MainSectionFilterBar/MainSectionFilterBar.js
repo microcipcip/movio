@@ -2,12 +2,12 @@ import React from 'react'
 import styled from 'styled-components'
 import * as s from 'styles/vars'
 import bp from 'styles/mixins/bp'
-import VoteFilterList from 'components/VoteFilterList'
+import VoteFilter from 'components/VoteFilter'
 
 const MainSectionFilterBar = props => (
   <MainSectionFilterBarStyled>
-    <MainSectionFilterSortBy>Sort by:</MainSectionFilterSortBy>
-    <VoteFilterList />
+    <MainSectionFilterSortBy>Sort by vote:</MainSectionFilterSortBy>
+    <VoteFilter />
   </MainSectionFilterBarStyled>
 )
 

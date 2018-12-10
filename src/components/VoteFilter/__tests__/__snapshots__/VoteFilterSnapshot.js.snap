@@ -2,20 +2,102 @@
 
 exports[`Should create snapshot 1`] = `
 .c0 {
-  cursor: pointer;
-  padding: 2px 10px;
-  background-color: #161616;
+  display: block;
+  min-width: 140px;
+  position: relative;
 }
 
-.c0:hover {
-  background-color: #161616;
+.c1 .input-range__track--active {
+  background: #1a7eff;
+}
+
+.c1 .input-range__slider {
+  width: 1.3rem;
+  height: 1.3rem;
+  margin-top: -0.8rem;
+  background-color: #1a7eff;
+  border-color: #1a7eff;
+}
+
+.c1 .input-range__label-container {
+  font-size: 1rem;
+}
+
+.c1 .input-range__label--value {
+  top: -2.4rem;
+}
+
+.c1 .input-range__label--value .input-range__label-container {
+  left: 0;
+}
+
+.c1 .input-range__label--min,
+.c1 .input-range__label--max {
+  bottom: -1.6rem;
 }
 
 <div>
   <div
     class="c0"
   >
-    0
+    <div
+      class="c1"
+    >
+      <div
+        aria-disabled="false"
+        class="input-range"
+      >
+        <span
+          class="input-range__label input-range__label--min"
+        >
+          <span
+            class="input-range__label-container"
+          >
+            0
+          </span>
+        </span>
+        <div
+          class="input-range__track input-range__track--background"
+        >
+          <div
+            class="input-range__track input-range__track--active"
+            style="left: 0%; width: 30%;"
+          />
+          <span
+            class="input-range__slider-container"
+            style="position: absolute; left: 30%;"
+          >
+            <span
+              class="input-range__label input-range__label--value"
+            >
+              <span
+                class="input-range__label-container"
+              >
+                3
+              </span>
+            </span>
+            <div
+              aria-valuemax="10"
+              aria-valuemin="0"
+              aria-valuenow="3"
+              class="input-range__slider"
+              draggable="false"
+              role="slider"
+              tabindex="0"
+            />
+          </span>
+        </div>
+        <span
+          class="input-range__label input-range__label--max"
+        >
+          <span
+            class="input-range__label-container"
+          >
+            10
+          </span>
+        </span>
+      </div>
+    </div>
   </div>
 </div>
 `;
