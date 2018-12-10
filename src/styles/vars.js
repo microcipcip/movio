@@ -66,6 +66,7 @@ export const movieListGutter = '16px'
 
 // zindex
 export const zIndex = {
+  AppInitWrapper: 10,
   header: 4,
   mainSectionFilteredBar: 3,
   sideSection: 3,
@@ -81,6 +82,10 @@ export const cBlue = '#1a7eff'
 export const cBlueDark = '#0400ff'
 export const theme = {
   dark: {
+    appInitLoader: cBlue,
+    appIniErrorTextColor: cBlue,
+    appIniErrorReloaderBg: cBlue,
+    appIniErrorReloaderTextColor: cWhite,
     headerSectionBg: darken(0.01, cGreyDark),
     headerSectionBorderColor: darken(0.02, cGreyDark),
     headerTitle: darken(0.5, cWhite),
@@ -100,6 +105,10 @@ export const theme = {
     actionColorHover: cBlueDark,
   },
   light: {
+    appInitLoader: cBlue,
+    appIniErrorTextColor: cBlue,
+    appIniErrorReloaderBg: cBlue,
+    appIniErrorReloaderTextColor: cWhite,
     headerSectionBg: cWhite,
     headerSectionBorderColor: darken(0.1, cWhite),
     headerTitle: lighten(0.5, cBlack),

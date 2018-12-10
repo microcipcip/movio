@@ -9,7 +9,8 @@ export const cinemaContextState = {
   setVoteFilter: noop,
   toggleSideSection: noop,
   sideSectionActive: false,
-  isFetching: false,
+  isFetching: true,
+  isLoading: true,
   errorMsg: '',
 }
 
