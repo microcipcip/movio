@@ -33,19 +33,19 @@ exports[`Should create snapshot 1`] = `
   >
     <input
       class="c0 c1"
-      id="genre-Action"
+      id="genre-Adventure"
       name="checkbox"
       type="checkbox"
-      value="Action"
+      value="Adventure"
     />
     <label
       class="c2"
-      for="genre-Action"
+      for="genre-Adventure"
     >
       <div
         class=""
       >
-        Action
+        Adventure
       </div>
        
     </label>

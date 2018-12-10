@@ -4,6 +4,6 @@ import GenreFilterList from '../GenreFilterList'
 
 it('Should not find the first genre when genreList is not provided', async () => {
   const { queryByLabelText } = customRender(<GenreFilterList />)
-  const actionGenre = queryByLabelText(genreList[0].name)
+  const actionGenre = queryByLabelText(genreList[1].name)
   expect(actionGenre).toBeNull()
 })

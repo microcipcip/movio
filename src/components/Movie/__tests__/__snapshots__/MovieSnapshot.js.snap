@@ -29,7 +29,8 @@ exports[`Should create snapshot 1`] = `
 
 .c4 {
   color: #c3c3c3;
-  font-size: 1.4rem;
+  text-align: right;
+  font-size: 1.2rem;
 }
 
 .c0 {

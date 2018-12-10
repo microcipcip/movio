@@ -1,16 +1,16 @@
 import React from 'react'
-import { customRender, movieList } from 'utils/testUtils'
+import { customRender, genreList, movieList } from 'utils/testUtils'
 import Movie from '../Movie'
 
 it('Should have the right src and alt tag', async () => {
   const movie = movieList[0]
   const { getByAltText } = customRender(
-    <Movie {...movie}>
+    <Movie genreList={genreList} {...movie}>
       <Movie.Cover />
       <Movie.Title />
       <Movie.Date />
     </Movie>,
-    { movieList }
+    { genreList, movieList }
   )
   const img = getByAltText(movieList[0].title)
   expect(img.getAttribute('alt')).toEqual(movieList[0].title)

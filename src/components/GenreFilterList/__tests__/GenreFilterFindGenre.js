@@ -5,5 +5,5 @@ import GenreFilterList from '../GenreFilterList'
 it('Should find the first genre ', async () => {
   const { getByLabelText } = customRender(<GenreFilterList />, { genreList })
 
-  getByLabelText(genreList[0].name)
+  getByLabelText(genreList[1].name)
 })

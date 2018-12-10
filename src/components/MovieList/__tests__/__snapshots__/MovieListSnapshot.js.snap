@@ -28,8 +28,34 @@ exports[`Should create snapshot 1`] = `
 }
 
 .c6 {
-  color: #c3c3c3;
-  font-size: 1.4rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin: 0.5em 0 0;
+  font-weight: bold;
+  font-size: 1.8rem;
+}
+
+.c7 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  margin: 0.1em 0.4em 0.1em 0;
+  color: #555555;
+  font-size: 1.2rem;
+}
+
+.c7:after {
+  content: ', ';
+}
+
+.c7:last-child:after {
+  display: none;
 }
 
 .c1 {
@@ -49,6 +75,13 @@ exports[`Should create snapshot 1`] = `
 }
 
 .c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   padding: 10px 0 0;
 }
 
@@ -82,12 +115,20 @@ exports[`Should create snapshot 1`] = `
         >
           Venom
         </h2>
-        <time
+        <div
           class="c6"
-          datetime="2018-10-03"
         >
-          03 10 2018
-        </time>
+          <span
+            class="c7"
+          >
+            Action
+          </span>
+          <span
+            class="c7"
+          >
+            Adventure
+          </span>
+        </div>
       </div>
     </div>
     <div
@@ -110,12 +151,20 @@ exports[`Should create snapshot 1`] = `
         >
           Fantastic Beasts: The Crimes of Grindelwald
         </h2>
-        <time
+        <div
           class="c6"
-          datetime="2018-11-14"
         >
-          14 11 2018
-        </time>
+          <span
+            class="c7"
+          >
+            Animation
+          </span>
+          <span
+            class="c7"
+          >
+            Comedy
+          </span>
+        </div>
       </div>
     </div>
     <div
@@ -138,12 +187,15 @@ exports[`Should create snapshot 1`] = `
         >
           Bohemian Rhapsody
         </h2>
-        <time
+        <div
           class="c6"
-          datetime="2018-10-24"
         >
-          24 10 2018
-        </time>
+          <span
+            class="c7"
+          >
+            Crime
+          </span>
+        </div>
       </div>
     </div>
     <div
@@ -166,12 +218,15 @@ exports[`Should create snapshot 1`] = `
         >
           Mortal Engines
         </h2>
-        <time
+        <div
           class="c6"
-          datetime="2018-12-06"
         >
-          06 12 2018
-        </time>
+          <span
+            class="c7"
+          >
+            Action
+          </span>
+        </div>
       </div>
     </div>
     <div
@@ -194,12 +249,15 @@ exports[`Should create snapshot 1`] = `
         >
           Robin Hood
         </h2>
-        <time
+        <div
           class="c6"
-          datetime="2018-11-20"
         >
-          20 11 2018
-        </time>
+          <span
+            class="c7"
+          >
+            Adventure
+          </span>
+        </div>
       </div>
     </div>
     <div
@@ -222,12 +280,15 @@ exports[`Should create snapshot 1`] = `
         >
           The Seven Deadly Sins: Prisoners of the Sky
         </h2>
-        <time
+        <div
           class="c6"
-          datetime="2018-08-18"
         >
-          18 08 2018
-        </time>
+          <span
+            class="c7"
+          >
+            Animation
+          </span>
+        </div>
       </div>
     </div>
     <div
@@ -250,12 +311,20 @@ exports[`Should create snapshot 1`] = `
         >
           Ralph Breaks the Internet
         </h2>
-        <time
+        <div
           class="c6"
-          datetime="2018-11-20"
         >
-          20 11 2018
-        </time>
+          <span
+            class="c7"
+          >
+            Comedy
+          </span>
+          <span
+            class="c7"
+          >
+            Crime
+          </span>
+        </div>
       </div>
     </div>
   </div>
