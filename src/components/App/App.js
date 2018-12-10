@@ -52,7 +52,7 @@ class App extends Component {
         movie =>
           movie.genre_ids.some(
             genreId => !genreIdListLength || genreIdList.includes(genreId)
-          ) && movie.vote_average > voteFilter
+          ) && movie.vote_average >= voteFilter
       ),
     }))
   }
