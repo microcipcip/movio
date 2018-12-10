@@ -29,7 +29,7 @@ const MovieListStyled = styled.div`
   grid-gap: ${s.movieListGutter};
   ${bp.up('m')`
     grid-template-columns: repeat(auto-fill, minmax(200px, 2fr));
-  `}
+  `};
 `
 
 const MovieContent = styled.div`

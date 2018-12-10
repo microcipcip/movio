@@ -56,7 +56,9 @@ class App extends Component {
       if (genreCopy.id === genreId) genreCopy.isChecked = !isChecked
       return genreCopy
     }
-    this.setState(() => ({ genreList: this.state.genreList.map(setIsChecked) }))
+    this.setState(() => ({
+      genreList: this.state.genreList.map(setIsChecked),
+    }))
   }
 
   setVoteFilter = voteFilter => {
@@ -190,8 +192,8 @@ const AppInitLoader = ({ isLoading, themeType }) => (
       <Loader
         type="Oval"
         color={s.theme[themeType].appInitLoader}
-        height="100"
-        width="100"
+        height="70"
+        width="70"
       />
     </AppInitWrapper>
   </Transition>
