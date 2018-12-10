@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/movio/precache-manifest.cf6885e666f16458e15d4d156d25917f.js"
+  "/movio/precache-manifest.a6f2c51d539b0822bdcb97c34165db86.js"
 );
 
 workbox.clientsClaim();
