@@ -16,7 +16,6 @@ class VoteFilter extends React.Component {
           <VoteFilterListStyled>
             <VoteFilterListInput>
               <InputRange
-                // formatLabel={value => ``}
                 minValue={0}
                 maxValue={10}
                 value={voteFilter}
@@ -37,6 +36,7 @@ const VoteFilterListStyled = styled.div`
   min-width: 140px;
   position: relative;
 `
+
 const VoteFilterListInput = styled.div`
   .input-range__track--active {
     background: ${props => props.theme.actionColor};
@@ -49,7 +49,7 @@ const VoteFilterListInput = styled.div`
     border-color: ${props => props.theme.actionColor};
   }
   .input-range__label-container {
-    font-size: 1rem;
+    font-size: 1.2rem;
   }
   .input-range__label--value {
     top: -2.4rem;
@@ -59,7 +59,7 @@ const VoteFilterListInput = styled.div`
   }
   .input-range__label--min,
   .input-range__label--max {
-    bottom: -1.6rem;
+    display: none;
   }
 `
 

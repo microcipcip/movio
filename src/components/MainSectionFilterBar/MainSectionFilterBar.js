@@ -33,6 +33,7 @@ const MainSectionFilterBarStyled = styled.div`
 const MainSectionFilterSortBy = styled.div`
   margin-right: 8px;
   color: ${props => props.theme.mainSectionFilterSortByColor};
+  font-size: 1.4rem;
 `
 
 export default MainSectionFilterBar
