@@ -16,7 +16,7 @@ self.__precacheManifest = [
     "url": "/movio/static/js/runtime~main.498f9b83.js"
   },
   {
-    "revision": "f8414237e7d006ee69f866a3b8b28e05",
+    "revision": "b5e3598f5c1783cd929aa1a5ec8626c2",
     "url": "/movio/index.html"
   }
 ];
