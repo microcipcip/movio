@@ -1,0 +1,150 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should create snapshot 1`] = `
+.c2 {
+  display: none;
+}
+
+.c3 {
+  cursor: pointer;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 4px 10px;
+  color: #999;
+}
+
+.c1:checked + .c3 {
+  color: #1a7eff;
+}
+
+.c0 {
+  padding: 26px 0;
+}
+
+<div>
+  <div
+    class="c0"
+  >
+    <div
+      class=""
+    >
+      <input
+        class="c1 c2"
+        id="genre-Action"
+        name="checkbox"
+        type="checkbox"
+        value="Action"
+      />
+      <label
+        class="c3"
+        for="genre-Action"
+      >
+        <div
+          class=""
+        >
+          Action
+        </div>
+         
+      </label>
+    </div>
+    <div
+      class=""
+    >
+      <input
+        class="c1 c2"
+        id="genre-Adventure"
+        name="checkbox"
+        type="checkbox"
+        value="Adventure"
+      />
+      <label
+        class="c3"
+        for="genre-Adventure"
+      >
+        <div
+          class=""
+        >
+          Adventure
+        </div>
+         
+      </label>
+    </div>
+    <div
+      class=""
+    >
+      <input
+        class="c1 c2"
+        id="genre-Animation"
+        name="checkbox"
+        type="checkbox"
+        value="Animation"
+      />
+      <label
+        class="c3"
+        for="genre-Animation"
+      >
+        <div
+          class=""
+        >
+          Animation
+        </div>
+         
+      </label>
+    </div>
+    <div
+      class=""
+    >
+      <input
+        class="c1 c2"
+        id="genre-Comedy"
+        name="checkbox"
+        type="checkbox"
+        value="Comedy"
+      />
+      <label
+        class="c3"
+        for="genre-Comedy"
+      >
+        <div
+          class=""
+        >
+          Comedy
+        </div>
+         
+      </label>
+    </div>
+    <div
+      class=""
+    >
+      <input
+        class="c1 c2"
+        id="genre-Crime"
+        name="checkbox"
+        type="checkbox"
+        value="Crime"
+      />
+      <label
+        class="c3"
+        for="genre-Crime"
+      >
+        <div
+          class=""
+        >
+          Crime
+        </div>
+         
+      </label>
+    </div>
+  </div>
+</div>
+`;

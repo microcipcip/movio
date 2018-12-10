@@ -1,0 +1,54 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should create snapshot 1`] = `
+.c1 {
+  display: none;
+}
+
+.c2 {
+  cursor: pointer;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 4px 10px;
+  color: #999;
+}
+
+.c0:checked + .c2 {
+  color: #1a7eff;
+}
+
+<div>
+  <div
+    class=""
+  >
+    <input
+      class="c0 c1"
+      id="genre-Action"
+      name="checkbox"
+      type="checkbox"
+      value="Action"
+    />
+    <label
+      class="c2"
+      for="genre-Action"
+    >
+      <div
+        class=""
+      >
+        Action
+      </div>
+       
+    </label>
+  </div>
+</div>
+`;
