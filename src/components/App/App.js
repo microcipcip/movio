@@ -6,6 +6,7 @@ import Styles from 'styles'
 import * as s from 'styles/vars'
 import { TMDB_VOTE_RATING_DEFAULT } from 'config'
 import fetchApi from 'utils/fetchApi'
+import normalizeObject from 'utils/normalizeObject'
 import CinemaContext, { cinemaContextState } from './CinemaContext'
 import HeaderSection from 'components/HeaderSection'
 import MainSection from 'components/MainSection'
@@ -31,6 +32,7 @@ class App extends Component {
     return genres
       .map(setIsChecked)
       .filter(({ id }) => movieList.some(movie => movie.genre_ids.includes(id)))
+      .reduce(normalizeObject, {})
   }
 
   resetVoteFilter = () => {
@@ -38,7 +40,7 @@ class App extends Component {
   }
 
   getGenreActiveIdList = () => {
-    return this.state.genreList
+    return Object.values(this.state.genreList)
       .filter(genre => genre.isChecked)
       .map(genre => genre.id)
   }
@@ -64,7 +66,9 @@ class App extends Component {
       return genreCopy
     }
     this.setState(() => ({
-      genreList: this.state.genreList.map(setIsChecked),
+      genreList: Object.values(this.state.genreList)
+        .map(setIsChecked)
+        .reduce(normalizeObject, {}),
     }))
   }
 
@@ -90,7 +94,7 @@ class App extends Component {
       this.genreFetchedList = await this.fetchGenres(this.movieFetchedList)
       this.setState(() => ({
         movieList: [...this.movieFetchedList],
-        genreList: [...this.genreFetchedList],
+        genreList: { ...this.genreFetchedList },
         isFetching: false,
       }))
 
@@ -113,7 +117,7 @@ class App extends Component {
   // state
   themeType = 'dark' // dark or light
   movieFetchedList = []
-  genreFetchedList = []
+  genreFetchedList = {}
 
   state = {
     ...cinemaContextState,

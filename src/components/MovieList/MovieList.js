@@ -7,15 +7,16 @@ import Movie from 'components/Movie'
 
 const MovieList = props => (
   <CinemaContext.Consumer>
-    {({ movieList, resetVoteFilter }) =>
+    {({ movieList, resetVoteFilter, genreList }) =>
       movieList.length ? (
         <MovieListStyled>
           {movieList.map(movie => (
-            <Movie key={movie.id} {...movie}>
+            <Movie key={movie.id} genreList={genreList} {...movie}>
               <Movie.Cover />
               <MovieContent className="typ">
+                {/*<Movie.Date />*/}
                 <Movie.Title />
-                <Movie.Date />
+                <Movie.GenreList />
               </MovieContent>
             </Movie>
           ))}
@@ -42,6 +43,8 @@ const MovieListStyled = styled.div`
 `
 
 const MovieContent = styled.div`
+  display: flex;
+  flex-direction: column;
   padding: 10px 0 0;
 `
 

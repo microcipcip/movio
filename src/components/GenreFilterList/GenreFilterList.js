@@ -5,17 +5,21 @@ import GenreFilter from 'components/GenreFilter'
 
 const GenreFilterList = props => (
   <CinemaContext.Consumer>
-    {({ genreList, toggleGenreFilter }) => (
-      <GenreFilterListStyled>
-        {genreList.map(genre => (
-          <GenreFilter
-            key={genre.id}
-            genre={genre}
-            toggleGenreFilter={toggleGenreFilter}
-          />
-        ))}
-      </GenreFilterListStyled>
-    )}
+    {({ genreList, toggleGenreFilter }) => {
+      return (
+        <GenreFilterListStyled>
+          {Object.values(genreList)
+            .sort((a, b) => a.name.localeCompare(b.name))
+            .map(genre => (
+              <GenreFilter
+                key={genre.id}
+                genre={genre}
+                toggleGenreFilter={toggleGenreFilter}
+              />
+            ))}
+        </GenreFilterListStyled>
+      )
+    }}
   </CinemaContext.Consumer>
 )
 

@@ -15,7 +15,8 @@ const MovieDate = props => (
 
 const MovieDateStyled = styled.time`
   color: ${prop => prop.theme.textColorLight};
-  font-size: 1.4rem;
+  text-align: right;
+  font-size: 1.2rem;
 `
 
 export default MovieDate

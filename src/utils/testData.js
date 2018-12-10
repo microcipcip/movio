@@ -1,30 +1,30 @@
-export const genreList = [
-  {
+export const genreList = {
+  1: {
     id: 1,
     name: 'Action',
     isChecked: false,
   },
-  {
+  2: {
     id: 2,
     name: 'Adventure',
     isChecked: false,
   },
-  {
+  3: {
     id: 3,
     name: 'Animation',
     isChecked: false,
   },
-  {
+  4: {
     id: 4,
     name: 'Comedy',
     isChecked: false,
   },
-  {
+  5: {
     id: 5,
     name: 'Crime',
     isChecked: false,
   },
-]
+}
 
 export const movieList = [
   {
