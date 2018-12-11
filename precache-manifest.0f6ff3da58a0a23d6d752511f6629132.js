@@ -1,7 +1,7 @@
 self.__precacheManifest = [
   {
-    "revision": "0249ed95a69679116b4a",
-    "url": "/movio/static/js/main.0249ed95.chunk.js"
+    "revision": "8afafc18a9a0d89b392f",
+    "url": "/movio/static/js/main.8afafc18.chunk.js"
   },
   {
     "revision": "cfff0fa1df6e26bebf48",
@@ -16,7 +16,7 @@ self.__precacheManifest = [
     "url": "/movio/static/js/runtime~main.498f9b83.js"
   },
   {
-    "revision": "b91d097c89b44d99890ea0e8d2dada11",
+    "revision": "5d71ba3b5f9a6ef110c92be213fc683e",
     "url": "/movio/index.html"
   }
 ];
