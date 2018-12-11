@@ -19,7 +19,7 @@ const HeaderSection = props => (
   </CinemaContext.Consumer>
 )
 
-const HeaderSectionStyled = styled.div`
+const HeaderSectionStyled = styled.header`
   z-index: ${s.zIndex.header};
   display: flex;
   justify-content: space-between;

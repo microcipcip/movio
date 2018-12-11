@@ -15,7 +15,7 @@ const SideSection = props => (
   </CinemaContext.Consumer>
 )
 
-const SideSectionStyled = styled.div`
+const SideSectionStyled = styled.aside`
   z-index: ${s.zIndex.sideSection};
   position: fixed;
   top: ${s.headerHeight};

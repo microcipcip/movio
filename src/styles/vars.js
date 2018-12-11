@@ -58,8 +58,7 @@ export const mainSectionMarginTop = `${stripUnit(headerHeight) +
 
 // sideSection
 export const sideSectionWidth = '230px'
-export const sideSectionHeight = `100vh - ${stripUnit(headerHeight) +
-  stripUnit(mainSectionFilterBarHeight)}px`
+export const sideSectionHeight = `100vh - ${headerHeight}`
 
 // movie
 export const movieListGutter = '16px'

@@ -12,7 +12,7 @@ const MainSection = props => (
   </MainSectionStyled>
 )
 
-const MainSectionStyled = styled.div`
+const MainSectionStyled = styled.main`
   order: 3;
   flex: 1;
   margin-top: ${s.mainSectionMarginTop};
