@@ -21,7 +21,6 @@ class VoteFilter extends React.Component {
                 value={voteFilter}
                 onChange={val => setVoteFilter(val)}
                 step={0.5}
-                draggableTrack
               />
             </VoteFilterListInput>
           </VoteFilterListStyled>
