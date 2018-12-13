@@ -1,6 +1,6 @@
 ## App demo:
 
-[Click here](https://microcipcip.github.io/movio/) top view the demo online.
+[Click here](https://microcipcip.github.io/movio/) to view the demo online.
 
 ## Tested with
 
