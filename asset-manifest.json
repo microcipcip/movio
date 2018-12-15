@@ -1,13 +1,13 @@
 {
-  "main.js": "/movio/static/js/main.8afafc18.chunk.js",
-  "main.js.map": "/movio/static/js/main.8afafc18.chunk.js.map",
+  "main.js": "/movio/static/js/main.ec5e0e4f.chunk.js",
+  "main.js.map": "/movio/static/js/main.ec5e0e4f.chunk.js.map",
   "static/css/1.89412376.chunk.css": "/movio/static/css/1.89412376.chunk.css",
-  "static/js/1.cfff0fa1.chunk.js": "/movio/static/js/1.cfff0fa1.chunk.js",
-  "static/js/1.cfff0fa1.chunk.js.map": "/movio/static/js/1.cfff0fa1.chunk.js.map",
+  "static/js/1.7264611c.chunk.js": "/movio/static/js/1.7264611c.chunk.js",
+  "static/js/1.7264611c.chunk.js.map": "/movio/static/js/1.7264611c.chunk.js.map",
   "runtime~main.js": "/movio/static/js/runtime~main.498f9b83.js",
   "runtime~main.js.map": "/movio/static/js/runtime~main.498f9b83.js.map",
   "static/css/1.89412376.chunk.css.map": "/movio/static/css/1.89412376.chunk.css.map",
   "index.html": "/movio/index.html",
-  "precache-manifest.0f6ff3da58a0a23d6d752511f6629132.js": "/movio/precache-manifest.0f6ff3da58a0a23d6d752511f6629132.js",
+  "precache-manifest.e1162c6da16a03cc07b4b03e697c8421.js": "/movio/precache-manifest.e1162c6da16a03cc07b4b03e697c8421.js",
   "service-worker.js": "/movio/service-worker.js"
 }
