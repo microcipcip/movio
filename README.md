@@ -2,6 +2,11 @@
 
 [Click here](https://microcipcip.github.io/movio/) to view the demo online.
 
+## Install
+
+- Rename .env-sample to .env and add the relevant `REACT_APP_TMDB_API_KEY`.
+- Install npm packages and run the usual Create React App commands.
+
 ## Tested with
 
 - Firefox
